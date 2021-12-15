@@ -4,7 +4,7 @@
 
 <head>
     
-    <title>文章归档：2021 - e路成长</title>
+    <title>服务器无法rsa登陆 - e路成长</title>
     <meta charset="UTF-8">
     <meta name="keywords" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
@@ -12,18 +12,23 @@
     
 
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-    <meta property="og:type" content="website">
-<meta property="og:title" content="e路成长">
-<meta property="og:url" content="http://example.com/archives/2021/index.html">
+    <meta name="description" content="ssh 无法登陆服务器，调试方法被rsa 无法登陆坑了很久 无意中发现了别人提供了一个rsa方式无法ssh登陆的调试大杀器 特此记录下 服务器端 开启sshd 调试服务器 &#x2F;usr&#x2F;sbin&#x2F;sshd -d -p 2222   -d 参数应该是调试状态  -p 是端口号 ssh -vvv &amp;#114;&amp;#x6f;&amp;#x6f;&amp;#x74;&amp;#64;&amp;#119;&amp;#x77;&amp;#x77;&amp;#x2e;&amp;#">
+<meta property="og:type" content="article">
+<meta property="og:title" content="服务器无法rsa登陆">
+<meta property="og:url" content="http://example.com/2017/11/06/%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%97%A0%E6%B3%95rsa%E7%99%BB%E9%99%86/index.html">
 <meta property="og:site_name" content="e路成长">
+<meta property="og:description" content="ssh 无法登陆服务器，调试方法被rsa 无法登陆坑了很久 无意中发现了别人提供了一个rsa方式无法ssh登陆的调试大杀器 特此记录下 服务器端 开启sshd 调试服务器 &#x2F;usr&#x2F;sbin&#x2F;sshd -d -p 2222   -d 参数应该是调试状态  -p 是端口号 ssh -vvv &amp;#114;&amp;#x6f;&amp;#x6f;&amp;#x74;&amp;#64;&amp;#119;&amp;#x77;&amp;#x77;&amp;#x2e;&amp;#">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2017-11-06T00:17:20.000Z">
+<meta property="article:modified_time" content="2021-11-08T05:55:24.690Z">
 <meta property="article:author" content="wss">
+<meta property="article:tag" content="ssh">
 <meta name="twitter:card" content="summary">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/npm/highlight.js@9.15.8/styles/atom-one-dark.css,npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css,gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css,npm/hexo-theme-nexmoe@latest/source/lib/mdui_043tiny/css/mdui.css,npm/hexo-theme-nexmoe@latest/source/lib/iconfont/iconfont.css?v=233" crossorigin>
-    <link rel="stylesheet" href="/css/style.css?v=1639534381356">
+    <link rel="stylesheet" href="/css/style.css?v=1639534381351">
      
     
-    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1639534381356">
+    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1639534381351">
     
 <meta name="generator" content="Hexo 5.4.0"></head>
 
@@ -143,56 +148,77 @@
     </div>
     <div id="nexmoe-content">
         <div class="nexmoe-primary">
-            <section class="nexmoe-posts">
-    
-    <div class="nexmoe-post">
-        <a href="/2021/11/06/hello-world/">
-            
-                <div class="nexmoe-post-cover mdui-ripple" style="padding-bottom: 66.66666666666666%;"> 
-                    <img data-src="https://cdn.jsdelivr.net/gh/nexmoe/nexmoe.github.io@latest/images/cover/5c3aec85a4343.jpg" data-sizes="auto" alt="Hello World" class="lazyload">
-                    <h1>Hello World</h1>
-                </div>
-            
-        </a>
+            <div class="nexmoe-post">
 
-        <div class="nexmoe-post-meta nexmoe-rainbow">
-            <a><i class="nexmoefont icon-calendar-fill"></i>2021年11月06日</a>
-            <a><i class="nexmoefont icon-areachart"></i>75 字</a>
-            <a><i class="nexmoefont icon-time-circle-fill"></i>大概 1 分钟</a>
-        </div>
+  <article>
+      
+          <div class="nexmoe-post-cover" style="padding-bottom: 66.66666666666666%;"> 
+              <img data-src="https://cdn.jsdelivr.net/gh/nexmoe/nexmoe.github.io@latest/images/cover/5c3aec85a4343.jpg" data-sizes="auto" alt="服务器无法rsa登陆" class="lazyload">
+              <h1>服务器无法rsa登陆</h1>
+          </div>
+      
+      
+      <div class="nexmoe-post-meta nexmoe-rainbow" style="margin:10px 0!important;">
+    <a><i class="nexmoefont icon-calendar-fill"></i>2017年11月06日</a>
+    <a><i class="nexmoefont icon-areachart"></i>194 字</a>
+    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 1 分钟</a>
+</div>
 
-        <article>
-            
-                <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more...
-            
-        </article>
+      
+
+      <h2 id="ssh-无法登陆服务器，调试方法"><a href="#ssh-无法登陆服务器，调试方法" class="headerlink" title="ssh 无法登陆服务器，调试方法"></a>ssh 无法登陆服务器，调试方法</h2><p>被rsa 无法登陆坑了很久 无意中发现了别人提供了一个rsa方式无法ssh登陆的调试大杀器 特此记录下</p>
+<p>服务器端 开启sshd 调试服务器</p>
+<p>/usr/sbin/sshd -d -p 2222   -d 参数应该是调试状态  -p 是端口号</p>
+<p>ssh -vvv <a href="mailto:&#114;&#x6f;&#x6f;&#x74;&#64;&#119;&#x77;&#x77;&#x2e;&#x70;&#104;&#x70;&#x79;&#105;&#113;&#105;&#119;&#97;&#110;&#x2e;&#99;&#111;&#109;">&#114;&#x6f;&#x6f;&#x74;&#64;&#119;&#x77;&#x77;&#x2e;&#x70;&#104;&#x70;&#x79;&#105;&#113;&#105;&#119;&#97;&#110;&#x2e;&#99;&#111;&#109;</a> -p 2222  客户端连接采用 -vvv 显示冗余信息 即是调试信息  </p>
+<p>这是这样仍然无法登陆 </p>
+<p>要下ssh rsa 登陆成功 必须保持 自己的家目录 必须都是自己的文件 只有自己可以读写 </p>
+<p>所以 必须这样  chown -Rf root.root /root 执行下 方可</p>
+
+  </article>
+
+  
+      
+    <div class="nexmoe-post-copyright">
+        <strong>本文作者：</strong>wss<br>
+        <strong>本文链接：</strong><a href="http://example.com/2017/11/06/%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%97%A0%E6%B3%95rsa%E7%99%BB%E9%99%86/" title="http:&#x2F;&#x2F;example.com&#x2F;2017&#x2F;11&#x2F;06&#x2F;%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%97%A0%E6%B3%95rsa%E7%99%BB%E9%99%86&#x2F;" target="_blank" rel="noopener">http:&#x2F;&#x2F;example.com&#x2F;2017&#x2F;11&#x2F;06&#x2F;%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%97%A0%E6%B3%95rsa%E7%99%BB%E9%99%86&#x2F;</a><br>
+        
+            <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
+        
     </div>
-    
-    <div class="nexmoe-post">
-        <a href="/2021/11/01/%E9%95%9C%E5%83%8F%E6%9E%84%E5%BB%BA%E5%B7%A5%E5%85%B7/">
-            
-                <div class="nexmoe-post-cover mdui-ripple" style="padding-bottom: 66.66666666666666%;"> 
-                    <img data-src="https://cdn.jsdelivr.net/gh/nexmoe/nexmoe.github.io@latest/images/cover/5c3aec85a4343.jpg" data-sizes="auto" alt="镜像构建工具" class="lazyload">
-                    <h1>镜像构建工具</h1>
-                </div>
-            
-        </a>
 
-        <div class="nexmoe-post-meta nexmoe-rainbow">
-            <a><i class="nexmoefont icon-calendar-fill"></i>2021年11月01日</a>
-            <a><i class="nexmoefont icon-areachart"></i>30 字</a>
-            <a><i class="nexmoefont icon-time-circle-fill"></i>大概 1 分钟</a>
-        </div>
 
-        <article>
-            
-                <h2 id="设置ko-配置文件路径"><a href="#设置ko-配置文件路径" class="headerlink" title="设置ko 配置文件路径"></a>设置ko 配置文件路径</h2><figure class="highlight...
-            
-        </article>
-    </div>
+  
+  
+  <div class="nexmoe-post-meta nexmoe-rainbow">
     
+        <a class="nexmoefont icon-appstore-fill -link" href="/categories/linux/">linux</a>
+    
+    
+        <a class="nexmoefont icon-tag-fill -none-link" href="/tags/ssh/" rel="tag">ssh</a>
+    
+</div>
+
+  
+      <div class="nexmoe-post-footer">
+          <section class="nexmoe-comment">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.css">
+<div id="gitalk"></div>
+<script src="https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.js"></script>
+<script type="text/javascript">
+    var gitalk = new Gitalk({
+        clientID: '37ad9a75e87f611b2b11',
+        clientSecret: 'a1f67cc1fcc1aee5043d29abef49e6cf82922551',
+        id: window.location.pathname,
+        repo: 'liuchenrang.github.io',
+        owner: 'liuchenrang',
+        admin: 'liuchenrang'
+    })
+    gitalk.render('gitalk')
+</script>
 </section>
-
+      </div>
+  
+</div>
             <div class="nexmoe-post-right">
               <div class="nexmoe-fixed">
                   <div class="nexmoe-tool"> 
@@ -200,6 +226,13 @@
                       
                         
                           
+                          
+                              <button class="mdui-fab catalog" style="overflow:unset;">
+                                  <i class="nexmoefont icon-i-catalog"></i>
+                                  <div class="nexmoe-toc">
+                                      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#ssh-%E6%97%A0%E6%B3%95%E7%99%BB%E9%99%86%E6%9C%8D%E5%8A%A1%E5%99%A8%EF%BC%8C%E8%B0%83%E8%AF%95%E6%96%B9%E6%B3%95"><span class="toc-number">1.</span> <span class="toc-text">ssh 无法登陆服务器，调试方法</span></a></li></ol>
+                                  </div>
+                              </button>
                           
                           
                       
@@ -229,7 +262,7 @@
 
  
 
-<script async src="/js/app.js?v=1639534381357"></script>
+<script async src="/js/app.js?v=1639534381353"></script>
 
 
 
