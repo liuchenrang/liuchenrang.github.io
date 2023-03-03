@@ -20,28 +20,33 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="e路成长">
-<meta property="og:url" content="http://example.com/index.html">
+  <meta name="description" content="skywalking服务启动后，默认监听127.0.0.1,本着玩的目的，我们使用envoy代理提供对外服务! 首先开启基于文件的动态配置配置如下，    lds代表监听集群发现， cds 代表集群发现。 12345678910111213141516171819202122232425node:  id: id_1  cluster: testadmin:  access_log_path">
+<meta property="og:type" content="article">
+<meta property="og:title" content="envoy代理skywalking提供服务">
+<meta property="og:url" content="http://example.com/2023/03/03/envoy%E4%BB%A3%E7%90%86skywalking%E6%8F%90%E4%BE%9B%E6%9C%8D%E5%8A%A1/index.html">
 <meta property="og:site_name" content="e路成长">
+<meta property="og:description" content="skywalking服务启动后，默认监听127.0.0.1,本着玩的目的，我们使用envoy代理提供对外服务! 首先开启基于文件的动态配置配置如下，    lds代表监听集群发现， cds 代表集群发现。 12345678910111213141516171819202122232425node:  id: id_1  cluster: testadmin:  access_log_path">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-03-03T13:34:16.000Z">
+<meta property="article:modified_time" content="2023-03-03T14:40:28.012Z">
 <meta property="article:author" content="wss">
+<meta property="article:tag" content="envoy,skywalking">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://example.com/">
+<link rel="canonical" href="http://example.com/2023/03/03/envoy%E4%BB%A3%E7%90%86skywalking%E6%8F%90%E4%BE%9B%E6%9C%8D%E5%8A%A1/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome : true,
-    isPost : false,
+    isHome : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>e路成长</title>
+  <title>envoy代理skywalking提供服务 | e路成长</title>
   
 
 
@@ -155,9 +160,10 @@
         <div class="content-wrap">
           
 
-          <div class="content index posts-expand">
+          <div class="content post posts-expand">
             
-      
+
+    
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
@@ -173,10 +179,9 @@
       <meta itemprop="name" content="e路成长">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/03/03/envoy%E4%BB%A3%E7%90%86skywalking%E6%8F%90%E4%BE%9B%E6%9C%8D%E5%8A%A1/" class="post-title-link" itemprop="url">envoy代理skywalking提供服务</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          envoy代理skywalking提供服务
+        </h1>
 
         <div class="post-meta">
             <span class="post-meta-item">
@@ -200,7 +205,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>   skywalking服务启动后，默认监听127.0.0.1,本着玩的目的，我们使用envoy代理提供对外服务!</p>
+        <p>   skywalking服务启动后，默认监听127.0.0.1,本着玩的目的，我们使用envoy代理提供对外服务!</p>
 <h1 id="首先开启基于文件的动态配置"><a href="#首先开启基于文件的动态配置" class="headerlink" title="首先开启基于文件的动态配置"></a>首先开启基于文件的动态配置</h1><p>配置如下，    lds代表监听集群发现， cds 代表集群发现。</p>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">node:</span></span><br><span class="line">  <span class="attr">id:</span> <span class="string">id_1</span></span><br><span class="line">  <span class="attr">cluster:</span> <span class="string">test</span></span><br><span class="line"><span class="attr">admin:</span></span><br><span class="line">  <span class="attr">access_log_path:</span> <span class="string">/tmp/admin_access.log</span></span><br><span class="line">  <span class="attr">address:</span></span><br><span class="line">    <span class="attr">socket_address:</span> &#123; <span class="attr">address:</span> <span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>, <span class="attr">port_value:</span> <span class="number">9901</span> &#125;</span><br><span class="line"><span class="attr">dynamic_resources:</span></span><br><span class="line">  <span class="attr">lds_config:</span></span><br><span class="line">    <span class="attr">resource_api_version:</span> <span class="string">V3</span></span><br><span class="line">    <span class="attr">path:</span> <span class="string">&quot;./lds/lds.yaml&quot;</span></span><br><span class="line">  <span class="attr">cds_config:</span></span><br><span class="line">    <span class="attr">resource_api_version:</span> <span class="string">V3</span></span><br><span class="line">    <span class="attr">path:</span> <span class="string">&quot;./cds/cds.yaml&quot;</span></span><br><span class="line"><span class="attr">layered_runtime:</span></span><br><span class="line">  <span class="attr">layers:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">static_layer_0</span></span><br><span class="line">    <span class="attr">static_layer:</span></span><br><span class="line">      <span class="attr">envoy:</span></span><br><span class="line">        <span class="attr">resource_limits:</span></span><br><span class="line">          <span class="attr">listener:</span></span><br><span class="line">            <span class="attr">example_listener_name:</span></span><br><span class="line">              <span class="string">connection_limit:10000</span></span><br><span class="line">      <span class="attr">overload:</span></span><br><span class="line">        <span class="string">global_downstream_max_connections:50000</span></span><br></pre></td></tr></table></figure>
 
@@ -210,233 +215,33 @@
 
 <h1 id="我们的eds配置"><a href="#我们的eds配置" class="headerlink" title="我们的eds配置"></a>我们的eds配置</h1><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">resources:</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">&quot;@type&quot;</span><span class="string">:</span> <span class="string">type.googleapis.com/envoy.config.endpoint.v3.ClusterLoadAssignment</span></span><br><span class="line">  <span class="attr">cluster_name:</span> <span class="string">sky_bd_cs</span></span><br><span class="line"></span><br><span class="line">  <span class="attr">endpoints:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">lb_endpoints:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">endpoint:</span></span><br><span class="line">        <span class="attr">address:</span></span><br><span class="line">          <span class="attr">socket_address:</span></span><br><span class="line">            <span class="attr">address:</span> <span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span></span><br><span class="line">            <span class="attr">port_value:</span> <span class="number">12800</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="attr">resources:</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">&quot;@type&quot;</span><span class="string">:</span> <span class="string">type.googleapis.com/envoy.config.endpoint.v3.ClusterLoadAssignment</span></span><br><span class="line">  <span class="attr">cluster_name:</span> <span class="string">sky_web_cs</span></span><br><span class="line">  <span class="attr">endpoints:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">lb_endpoints:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">endpoint:</span></span><br><span class="line">        <span class="attr">address:</span></span><br><span class="line">          <span class="attr">socket_address:</span></span><br><span class="line">            <span class="attr">address:</span> <span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span></span><br><span class="line">            <span class="attr">port_value:</span> <span class="number">8787</span></span><br></pre></td></tr></table></figure>
 
-      
     </div>
 
     
     
     
+
       <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
+          <div class="post-tags">
+              <a href="/tags/envoy-skywalking/" rel="tag"># envoy,skywalking</a>
+          </div>
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/11/01/%E9%95%9C%E5%83%8F%E6%9E%84%E5%BB%BA%E5%B7%A5%E5%85%B7/">
+        
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="http://qnoss1.lanlanlife.com/c97ff72180553690b2c89a5250de4af4_1240x1238.jpg@1.150.90.webp">
-      <meta itemprop="name" content="wss">
-      <meta itemprop="description" content="">
-    </span>
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="e路成长">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/11/01/%E9%95%9C%E5%83%8F%E6%9E%84%E5%BB%BA%E5%B7%A5%E5%85%B7/" class="post-title-link" itemprop="url">镜像构建工具</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-11-01 22:45:57" itemprop="dateCreated datePublished" datetime="2021-11-01T22:45:57+08:00">2021-11-01</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-11-06 08:04:34" itemprop="dateModified" datetime="2021-11-06T08:04:34+08:00">2021-11-06</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="设置ko-配置文件路径"><a href="#设置ko-配置文件路径" class="headerlink" title="设置ko 配置文件路径"></a>设置ko 配置文件路径</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">KO_CONFIG_PATH=~/</span><br><span class="line">~/.ko.yaml</span><br><span class="line">defaultBaseImage: kubeimages/distroless-static</span><br></pre></td></tr></table></figure>
-
-<h2 id="设置docker-仓库空间"><a href="#设置docker-仓库空间" class="headerlink" title="设置docker 仓库空间"></a>设置docker 仓库空间</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">export KO_DOCKER_REPO=xinghuo</span><br><span class="line">发布镜像</span><br><span class="line">ko publish ./</span><br></pre></td></tr></table></figure>
-
-      
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/11/01/%E9%95%9C%E5%83%8F%E6%9E%84%E5%BB%BA%E5%B7%A5%E5%85%B7/" rel="prev" title="镜像构建工具">
+      <i class="fa fa-chevron-left"></i> 镜像构建工具
+    </a></div>
+      <div class="post-nav-item"></div>
     </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
       </footer>
+    
   </article>
   
   
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/10/29/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="http://qnoss1.lanlanlife.com/c97ff72180553690b2c89a5250de4af4_1240x1238.jpg@1.150.90.webp">
-      <meta itemprop="name" content="wss">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="e路成长">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/10/29/hello-world/" class="post-title-link" itemprop="url">未命名</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-10-29 12:03:19" itemprop="dateCreated datePublished" datetime="2021-10-29T12:03:19+08:00">2021-10-29</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-03-10 12:12:52" itemprop="dateModified" datetime="2022-03-10T12:12:52+08:00">2022-03-10</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>knative 相关架构图</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2017/11/06/%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%97%A0%E6%B3%95rsa%E7%99%BB%E9%99%86/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="http://qnoss1.lanlanlife.com/c97ff72180553690b2c89a5250de4af4_1240x1238.jpg@1.150.90.webp">
-      <meta itemprop="name" content="wss">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="e路成长">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2017/11/06/%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%97%A0%E6%B3%95rsa%E7%99%BB%E9%99%86/" class="post-title-link" itemprop="url">服务器无法rsa登陆</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2017-11-06 08:17:20" itemprop="dateCreated datePublished" datetime="2017-11-06T08:17:20+08:00">2017-11-06</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-11-06 09:04:16" itemprop="dateModified" datetime="2021-11-06T09:04:16+08:00">2021-11-06</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/linux/" itemprop="url" rel="index"><span itemprop="name">linux</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="ssh-无法登陆服务器，调试方法"><a href="#ssh-无法登陆服务器，调试方法" class="headerlink" title="ssh 无法登陆服务器，调试方法"></a>ssh 无法登陆服务器，调试方法</h2><p>被rsa 无法登陆坑了很久 无意中发现了别人提供了一个rsa方式无法ssh登陆的调试大杀器 特此记录下</p>
-<p>服务器端 开启sshd 调试服务器</p>
-<p>/usr/sbin/sshd -d -p 2222   -d 参数应该是调试状态  -p 是端口号</p>
-<p>ssh -vvv <a href="mailto:&#114;&#111;&#111;&#x74;&#64;&#119;&#119;&#119;&#x2e;&#x70;&#104;&#x70;&#121;&#105;&#x71;&#105;&#x77;&#97;&#x6e;&#46;&#99;&#111;&#109;">&#114;&#111;&#111;&#x74;&#64;&#119;&#119;&#119;&#x2e;&#x70;&#104;&#x70;&#121;&#105;&#x71;&#105;&#x77;&#97;&#x6e;&#46;&#99;&#111;&#109;</a> -p 2222  客户端连接采用 -vvv 显示冗余信息 即是调试信息  </p>
-<p>这是这样仍然无法登陆 </p>
-<p>要下ssh rsa 登陆成功 必须保持 自己的家目录 必须都是自己的文件 只有自己可以读写 </p>
-<p>所以 必须这样  chown -Rf root.root /root 执行下 方可</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-
   
 
 
@@ -489,6 +294,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%A6%96%E5%85%88%E5%BC%80%E5%90%AF%E5%9F%BA%E4%BA%8E%E6%96%87%E4%BB%B6%E7%9A%84%E5%8A%A8%E6%80%81%E9%85%8D%E7%BD%AE"><span class="nav-number">1.</span> <span class="nav-text">首先开启基于文件的动态配置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%88%91%E4%BB%ACcds%E9%85%8D%E7%BD%AE"><span class="nav-number">2.</span> <span class="nav-text">我们cds配置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%88%91%E4%BB%AC%E7%9A%84cds%E9%85%8D%E7%BD%AE"><span class="nav-number">3.</span> <span class="nav-text">我们的cds配置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%88%91%E4%BB%AC%E7%9A%84eds%E9%85%8D%E7%BD%AE"><span class="nav-number">4.</span> <span class="nav-text">我们的eds配置</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
